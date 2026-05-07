@@ -2,12 +2,12 @@ import { Outlet } from 'react-router-dom';
 import logoBarber from '../assets/BlackBarberIcono.png'
 import esquina from '../assets/esquina.svg'
 
-
 export const LoginPage = () => {
     return (
         <div className='flex justify-center align-middle h-screen w-full'>
             <aside className='lg:block hidden w-[50%] relative'>
-                <img src={logoBarber} alt="" className='w-full h-screen' />
+                <div style={{ backgroundImage: `url(${logoBarber})` }} className="w-full h-screen bg-cover bg-center" />
+                {/* <img src={logoBarber} alt="" className='w-full h-screen' /> */}
                 <div className='absolute right-0 top-0 w-[40%] h-screen bg-gradient-to-r from-transparent to-[#1a1a1a] ' />
             </aside>
             <aside className='bg-[#1a1a1a] lg:w-[50%] w-full flex flex-col items-center justify-center gap-2 font-serif text-gray-50'>
