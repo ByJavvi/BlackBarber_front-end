@@ -1,24 +1,27 @@
 import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import {LoginPage} from './components/LoginPage'
+import {MainLayout} from './components/MainLayout'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo shadow-md h-1" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="font-normal text-lg text-green-500 hover:text-blue-700"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        {/* RUTA PÚBLICA: Sin Navbar */}
+        <Route path="/login" element={<LoginPage />} />
+
+        {/* RUTAS PRIVADAS: Todas estas usarán el MainLayout (con Navbar) */}
+        <Route element={<MainLayout />}>
+          {/* <Route path="/" element={<Dashboard />} />
+          <Route path="/citas" element={<Citas />} />
+          <Route path="/barberos" element={<Barberos />} /> */}
+        </Route>
+
+        {/* Ruta para errores 404 opcional */}
+        <Route path="*" element={<h1>Página no encontrada</h1>} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
