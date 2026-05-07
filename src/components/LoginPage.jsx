@@ -11,7 +11,7 @@ export const LoginPage = () => {
                 <div className='absolute right-0 top-0 w-[40%] h-screen bg-gradient-to-r from-transparent to-[#1a1a1a] ' />
             </aside>
             <aside className='bg-[#1a1a1a] lg:w-[50%] w-full flex flex-col items-center justify-center gap-2 font-serif text-gray-50'>
-                <div className='relative p-10 border border-barber-gold rounded-md'>
+                <div className='relative p-14 border border-barber-gold rounded-md'>
                     <div className="absolute top-2 left-2 w-12 h-12 b pointer-events-none">
                         <img src={esquina} alt="" className='rotate-90' />
                     </div>
@@ -32,7 +32,7 @@ export const LoginPage = () => {
                     <div className='font-semibold text-6xl text-center'>
                         BlackBarber
                     </div>
-                    <div className='text-ceter mt-4'>
+                    <div className='text-ceter mt-4 mb-4'>
                         Por favor, inicia sesión
                     </div>
                     <div className='flex flex-col gap-1 mb-2'>
