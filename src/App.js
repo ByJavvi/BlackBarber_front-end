@@ -1,8 +1,10 @@
-import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import {LoginPage} from './components/LoginPage'
-import {MainLayout} from './components/MainLayout'
+import {LoginPage} from './components/LoginPage';
+import {RegisterPage} from './components/RegisterPage';
+import {MainLayout} from './components/MainLayout';
+import { EmailPasswordPage } from './components/EmailPasswordPage';
+import { NotFoundPage } from './components/NotFoundPage';
 
 function App() {
   return (
@@ -10,7 +12,8 @@ function App() {
       <Routes>
         {/* RUTA PÚBLICA: Sin Navbar */}
         <Route path="/login" element={<LoginPage />} />
-
+        <Route path="/register" element={<RegisterPage />} />
+        <Route path="/email-recuperacion" element={<EmailPasswordPage />} />
         {/* RUTAS PRIVADAS: Todas estas usarán el MainLayout (con Navbar) */}
         <Route element={<MainLayout />}>
           {/* <Route path="/" element={<Dashboard />} />
@@ -19,7 +22,7 @@ function App() {
         </Route>
 
         {/* Ruta para errores 404 opcional */}
-        <Route path="*" element={<h1>Página no encontrada</h1>} />
+        <Route path="*" element={<NotFoundPage/>} />
       </Routes>
     </BrowserRouter>
   );

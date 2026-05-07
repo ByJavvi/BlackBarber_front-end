@@ -3,7 +3,7 @@ import logoBarber from '../assets/BlackBarberIcono.png'
 import esquina from '../assets/esquina.svg'
 import { Link } from 'react-router-dom';
 
-export const LoginPage = () => {
+export const RegisterPage = () => {
     return (
         <div className='flex justify-center align-middle h-screen w-full'>
             <aside className='lg:block hidden w-[50%] relative'>
@@ -25,18 +25,22 @@ export const LoginPage = () => {
                     <div className="absolute bottom-2 right-2 w-12 h-12 b pointer-events-none select-none">
                         <img src={esquina} alt="" className='-rotate-90' />
                     </div>
-                    <div className="flex items-center justify-center my-4 w-full">
+                    <div>
+                        <Link to="/login">
+                        Regresar
+                        </Link>
+                    </div>
+                    <div className='w-80 flex flex-col gap-3'>
+                        <div className="flex items-center justify-center my-4 w-full">
                         <div className="h-[1px] flex-grow bg-gradient-to-r from-transparent to-barber-gold-dark"></div>
-                        <span className="px-4 text-xs font-serif tracking-widest text-barber-gold">Bienvenido a</span>
+                        <span className="px-4 text-xs font-serif tracking-widest text-barber-gold">Registrate</span>
                         <div className="h-[1px] flex-grow bg-gradient-to-l from-transparent to-barber-gold-dark"></div>
                     </div>
-                    <div className='font-semibold text-6xl text-center'>
-                        BlackBarber
+                    <div className='flex flex-col gap-1'>
+                        <label htmlFor="username" className='text-barber-gold'>Username</label>
+                        <input type="text" id='username' className='rounded-md border-[#f1d7ba] border-2 bg-transparent px-2 py-1 outline-none' />
                     </div>
-                    <div className='text-ceter mt-4 mb-4'>
-                        Por favor, inicia sesión
-                    </div>
-                    <div className='flex flex-col gap-1 mb-2'>
+                    <div className='flex flex-col gap-1'>
                         <label htmlFor="email" className='text-barber-gold'>Correo</label>
                         <input type="text" id='email' className='rounded-md border-[#f1d7ba] border-2 bg-transparent px-2 py-1 outline-none' />
                     </div>
@@ -44,17 +48,16 @@ export const LoginPage = () => {
                         <label htmlFor="pass" className='text-barber-gold'>Contraseña</label>
                         <input type="text" id='pass' className='rounded-md border-[#f1d7ba] border-2 bg-transparent px-2 py-1 outline-none' />
                     </div>
-                    <div className='flex justify-between mt-3'>
-                        <Link className='text-barber-gold-dark hover:text-barber-gold duration-200' to="/email-recuperacion">¿Olvidaste tu contraseña?</Link>
-                        <Link className='text-barber-gold-dark hover:text-barber-gold duration-200' to="/register">Registrate</Link>
+                    <div className='flex flex-col gap-1'>
+                        <label htmlFor="pass2" className='text-barber-gold'>Repite tu contraseña</label>
+                        <input type="text" id='pass2' className='rounded-md border-[#f1d7ba] border-2 bg-transparent px-2 py-1 outline-none' />
                     </div>
+                    </div>
+                    
                     <div className='mt-4'>
                         <button className='text-center bg-barber-gold-dark w-full py-2 rounded-md my-2 hover:bg-barber-gold duration-200 text-xl'>
-                            Iniciar sesión
+                            Registrate
                         </button>
-                    </div>
-                    <div className='text-center mt-4'>
-                        www.blackbarber.com | @BlackBarber
                     </div>
                 </div>
             </aside>
