@@ -2,8 +2,17 @@ import { Outlet } from 'react-router-dom';
 import logoBarber from '../assets/BlackBarberIcono.png'
 import esquina from '../assets/esquina.svg'
 import { Link } from 'react-router-dom';
+import visibility from '../assets/visibility.svg'
+import visibilityOff from '../assets/visibility_off.svg'
+import { useState } from 'react';
 
 export const LoginPage = () => {
+    const [passwordHidden, setPasswordHidden] = useState(true);
+
+    const togglePasswordVisibility = () => {
+        setPasswordHidden(!passwordHidden);
+    };
+
     return (
         <div className='flex justify-center align-middle h-screen w-full'>
             <aside className='lg:block hidden w-[50%] relative'>
@@ -11,7 +20,7 @@ export const LoginPage = () => {
                 {/* <img src={logoBarber} alt="" className='w-full h-screen' /> */}
                 <div className='absolute right-0 top-0 w-[40%] h-screen bg-gradient-to-r from-transparent to-[#1a1a1a] ' />
             </aside>
-            <aside className='bg-[#1a1a1a] lg:w-[50%] w-full flex flex-col items-center justify-center gap-2 font-serif text-gray-50'>
+            <aside className='bg-black-barber lg:w-[50%] w-full flex flex-col items-center justify-center gap-2 font-serif text-gray-50'>
                 <div className='relative p-14 border border-barber-gold rounded-md'>
                     <div className="absolute top-2 left-2 w-12 h-12 b pointer-events-none select-none">
                         <img src={esquina} alt="" className='rotate-90' />
@@ -42,7 +51,10 @@ export const LoginPage = () => {
                     </div>
                     <div className='flex flex-col gap-1'>
                         <label htmlFor="pass" className='text-barber-gold'>Contraseña</label>
-                        <input type="text" id='pass' className='rounded-md border-[#f1d7ba] border-2 bg-transparent px-2 py-1 outline-none' />
+                        <div className='flex rounded-md border-[#f1d7ba] border-2 px-2 py-1 justify-between items-center gap-2'>
+                            <input type={passwordHidden?"password":"text"} id='pass' className='bg-transparent outline-none w-full' />
+                        <img src={passwordHidden?visibility:visibilityOff} alt="" className='w-6 h-6' onClick={togglePasswordVisibility}/>
+                        </div>
                     </div>
                     <div className='flex justify-between mt-3'>
                         <Link className='text-barber-gold-dark hover:text-barber-gold duration-200' to="/email-recuperacion">¿Olvidaste tu contraseña?</Link>

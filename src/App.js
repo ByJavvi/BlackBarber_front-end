@@ -5,6 +5,9 @@ import {RegisterPage} from './components/RegisterPage';
 import {MainLayout} from './components/MainLayout';
 import { EmailPasswordPage } from './components/EmailPasswordPage';
 import { NotFoundPage } from './components/NotFoundPage';
+import { DashboardClient } from './components/DashboardClient';
+import { DashboardAdmin } from './components/DashboardAdmin';
+import { DashboardBarber } from './components/DashboardBarber';
 
 function App() {
   return (
@@ -16,9 +19,9 @@ function App() {
         <Route path="/email-recuperacion" element={<EmailPasswordPage />} />
         {/* RUTAS PRIVADAS: Todas estas usarán el MainLayout (con Navbar) */}
         <Route element={<MainLayout />}>
-          {/* <Route path="/" element={<Dashboard />} />
-          <Route path="/citas" element={<Citas />} />
-          <Route path="/barberos" element={<Barberos />} /> */}
+          {<Route path="/dashboard-client" element={<DashboardClient />} />}
+          {<Route path="/dashboard-admin" element={<DashboardAdmin />} />}
+          {<Route path="/dashboard-barbero" element={<DashboardBarber />} />}
         </Route>
 
         {/* Ruta para errores 404 opcional */}

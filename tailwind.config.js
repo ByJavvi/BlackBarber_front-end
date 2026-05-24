@@ -8,6 +8,7 @@ module.exports = {
       colors:{
         'barber-gold': '#E4A14E',
         'barber-gold-dark': '#B37E3D',
+        'black-barber': '#1A1A1A',
       }
     },
   },
