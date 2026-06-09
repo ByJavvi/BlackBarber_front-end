@@ -8,6 +8,7 @@ import { NotFoundPage } from './components/NotFoundPage';
 import { DashboardClient } from './components/DashboardClient';
 import { DashboardAdmin } from './components/DashboardAdmin';
 import { DashboardBarber } from './components/DashboardBarber';
+import { ServiciosPage } from './components/Catalagos/Servicios';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           {<Route path="/dashboard-client" element={<DashboardClient />} />}
           {<Route path="/dashboard-admin" element={<DashboardAdmin />} />}
           {<Route path="/dashboard-barbero" element={<DashboardBarber />} />}
+          {<Route path="/servicios" element={<ServiciosPage />} />}
         </Route>
 
         {/* Ruta para errores 404 opcional */}
