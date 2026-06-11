@@ -9,7 +9,7 @@ import { DashboardClient } from './components/DashboardClient';
 import { DashboardAdmin } from './components/DashboardAdmin';
 import { DashboardBarber } from './components/DashboardBarber';
 import { ServiciosPage } from './components/Catalagos/Servicios';
-
+import { BarberosPage } from './components/Catalagos/Barberos';
 function App() {
   return (
     <BrowserRouter>
@@ -24,6 +24,7 @@ function App() {
           {<Route path="/dashboard-admin" element={<DashboardAdmin />} />}
           {<Route path="/dashboard-barbero" element={<DashboardBarber />} />}
           {<Route path="/servicios" element={<ServiciosPage />} />}
+          {<Route path="/barberos" element={<BarberosPage />} />}
         </Route>
 
         {/* Ruta para errores 404 opcional */}
