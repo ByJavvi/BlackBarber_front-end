@@ -10,6 +10,10 @@ import { DashboardAdmin } from './components/DashboardAdmin';
 import { DashboardBarber } from './components/DashboardBarber';
 import { ServiciosPage } from './components/Catalagos/Servicios';
 import { BarberosPage } from './components/Catalagos/Barberos';
+import { PerfumesPage } from './components/Catalagos/Perfumes';
+import { PreferenciasClientePage } from './components/PreferenciasCliente';
+import { PromocionesPage } from './components/Promociones';
+import { UsuariosPage } from './components/Admin/Usuarios';
 function App() {
   return (
     <BrowserRouter>
@@ -25,6 +29,10 @@ function App() {
           {<Route path="/dashboard-barbero" element={<DashboardBarber />} />}
           {<Route path="/servicios" element={<ServiciosPage />} />}
           {<Route path="/barberos" element={<BarberosPage />} />}
+          {<Route path="/perfumes" element={<PerfumesPage />} />}
+          {<Route path="/promociones" element={<PromocionesPage />} />}
+          {<Route path="/prefs-cliente" element={<PreferenciasClientePage />} />}
+          {<Route path="/usuarios" element={<UsuariosPage />} />}
         </Route>
 
         {/* Ruta para errores 404 opcional */}

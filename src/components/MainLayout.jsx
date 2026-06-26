@@ -38,9 +38,12 @@ export const MainLayout = () => {
           }
         `}>
           <nav className="p-2 space-y-2">
-            <a href="#dashboard" className="block px-4 py-2 rounded hover:bg-zinc-800 text-stone-300 hover:text-white">Inicio</a>
-            <a href="#citas" className="block px-4 py-2 rounded hover:bg-zinc-800 text-stone-300 hover:text-white">Mis Citas</a>
-            <a href="#perfil" className="block px-4 py-2 rounded hover:bg-zinc-800 text-stone-300 hover:text-white">Perfil</a>
+            <a href="dashboard" className="block px-4 py-2 rounded hover:bg-zinc-800 text-stone-300 hover:text-white">Inicio</a>
+            <a href="servicios" className="block px-4 py-2 rounded hover:bg-zinc-800 text-stone-300 hover:text-white">Servicios</a>
+            <a href="barberos" className="block px-4 py-2 rounded hover:bg-zinc-800 text-stone-300 hover:text-white">Barberos</a>
+            <a href="perfumes" className="block px-4 py-2 rounded hover:bg-zinc-800 text-stone-300 hover:text-white">Perfumes</a>
+            <a href="promociones" className="block px-4 py-2 rounded hover:bg-zinc-800 text-stone-300 hover:text-white">Promociones</a>
+            <a href="usuarios" className="block px-4 py-2 rounded hover:bg-zinc-800 text-stone-300 hover:text-white">Usuarios</a>
           </nav>
         </aside>
 

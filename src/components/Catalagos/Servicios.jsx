@@ -8,7 +8,7 @@ export const ServiciosPage = () => {
     };
 
     return (
-        <main className="bg-zinc-900 text-white font-sans p-6 min-h-[91dvh]">
+        <main className="bg-zinc-900 text-white font-sans p-6 min-h-[91dvh]  mt-2 mx-2 rounded-md">
             <div className="border border-gray-500 hover:border-gray-400 rounded-lg shadow-md p-6 transition duration-200">
                 <p className="text-xl font-medium mb-4">
                     Administra tus servicios
