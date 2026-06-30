@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import { citasApi, serviciosApi, barberosApi, usuariosApi } from '../api';
+import { citasApi, barberosApi, usuariosApi } from '../api';
+import { serviciosApi } from '../services/servicioService';
 import { useAuth, ROLES } from '../context/AuthContext';
 import { useToast } from '../context/ToastContext';
 import { Modal } from '../elements/Modal';

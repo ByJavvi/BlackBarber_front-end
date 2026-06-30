@@ -7,6 +7,8 @@
 import { USE_MOCKS, setToken } from './client';
 import * as ep from './endpoints';
 import * as M from '../mocks/data';
+import barberApi from './barberApi';
+import { usuarioEndpoints } from './endpoints';
 
 // Copias mutables en memoria (solo modo mock)
 const db = {
@@ -64,18 +66,6 @@ export const barberosApi = {
   editar: (dto) => USE_MOCKS ? mock(() => { const i = db.barberos.findIndex((x) => x.id === dto.id); if (i >= 0) db.barberos[i] = { ...db.barberos[i], ...dto }; return ok('Barbero actualizado'); }) : ep.barberoEndpoints.editar(dto),
   eliminar: (id) => USE_MOCKS ? mock(() => { db.barberos = db.barberos.filter((x) => x.id !== id); return ok('Barbero eliminado'); }) : ep.barberoEndpoints.eliminar(id),
   asignarPerfil: (dto) => USE_MOCKS ? mock(() => { const b = db.barberos.find((x) => x.id === dto.idBarbero); if (b) { b.idUsuario = dto.idUsuario; const u = db.usuarios.find((x) => x.id === dto.idUsuario); b.nombreUsuario = u?.username || null; } return ok('Perfil asignado'); }) : ep.barberoEndpoints.asignarPerfil(dto),
-};
-
-/* ============ Servicios ============ */
-export const serviciosApi = {
-  listar: () => (USE_MOCKS ? mock(() => db.servicios) : ep.servicioEndpoints.listar()),
-  anadidos: (id) => (USE_MOCKS ? mock(() => db.anadidos[id] || []) : ep.servicioEndpoints.anadidosDeServicio(id)),
-  crear: (dto) => USE_MOCKS ? mock(() => { const id = nextId(db.servicios); db.servicios.push({ id, estatus: dto.estatus ?? 1, ...dto }); db.anadidos[id] = []; return ok('Servicio creado'); }) : ep.servicioEndpoints.crear(dto),
-  editar: (dto) => USE_MOCKS ? mock(() => { const i = db.servicios.findIndex((x) => x.id === dto.id); if (i >= 0) db.servicios[i] = { ...db.servicios[i], ...dto }; return ok('Servicio actualizado'); }) : ep.servicioEndpoints.editar(dto),
-  eliminar: (id) => USE_MOCKS ? mock(() => { db.servicios = db.servicios.filter((x) => x.id !== id); return ok('Servicio eliminado'); }) : ep.servicioEndpoints.eliminar(id),
-  crearAnadido: (dto) => USE_MOCKS ? mock(() => { const list = db.anadidos[dto.idPerteneciente] || (db.anadidos[dto.idPerteneciente] = []); list.push({ id: nextId(Object.values(db.anadidos).flat()), ...dto }); return ok('Añadido creado'); }) : ep.servicioEndpoints.crearAnadido(dto),
-  editarAnadido: (dto) => USE_MOCKS ? mock(() => { const list = db.anadidos[dto.idPerteneciente] || []; const i = list.findIndex((x) => x.id === dto.id); if (i >= 0) list[i] = { ...list[i], ...dto }; return ok('Añadido actualizado'); }) : ep.servicioEndpoints.editarAnadido(dto),
-  eliminarAnadido: (id) => USE_MOCKS ? mock(() => { Object.keys(db.anadidos).forEach((k) => { db.anadidos[k] = db.anadidos[k].filter((x) => x.id !== id); }); return ok('Añadido eliminado'); }) : ep.servicioEndpoints.eliminarAnadido(id),
 };
 
 /* ============ Perfumes ============ */
